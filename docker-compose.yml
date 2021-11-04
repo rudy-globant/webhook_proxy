@@ -1,0 +1,12 @@
+version: '3.5'
+
+services:
+  webhookrelay:
+    image: webhookrelay/webhookrelayd
+    container_name: webhookrelay
+    restart: always
+    network_mode: host
+    environment:
+      - RELAY_KEY=${RELAY_KEY}
+      - RELAY_SECRET=${RELAY_SECRET}
+      - BUCKETS=${BUCKETS}
